@@ -1,24 +1,18 @@
-pipeline{
+pipeline {
     agent any
 
-    stages{
-        stage("Nikhil"){
-            steps{
-                echo "Nikhil first steps"
+    stages {
+
+        stage('Docker Build') {
+            steps {
+                sh '/usr/local/bin/docker build -t practice .'
             }
         }
-        stage("Deepak"){
-            steps{
-                echo "Deepak second"
-            }
-        }
-        stage("Install dependencies"){
-            steps{
-                sh 'npm install'
+        stage('Docker Run') {
+            steps {
+                sh '/usr/local/bin/docker rm -f practice-container || true'
+                sh '/usr/local/bin/docker run -d --name practice-container -p 6969:6969 practice'
             }
         }
     }
-
-
-    
 }
