@@ -1,0 +1,36 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout source code
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Stage: Nikhil
+      - name: Nikhil
+        run: echo "Nikhil first steps"
+
+      # Stage: Deepak
+      - name: Deepak
+        run: echo "Deepak"
+
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Stage: Install dependencies
+      - name: Install dependencies
+        run: npm install
