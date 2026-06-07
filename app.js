@@ -3,11 +3,11 @@ const express = require('express');
 const app = express();
 
 app.get('/',(req,res)=>{
-    res.send("Ayush ");
+    res.send("Nikhil ");
 })
 
-app.get('/ayushChodu',(req,res)=>{
-    res.send("Ayush singh")
+app.get('/hehe',(req,res)=>{
+    res.send("Nikhil singh")
 })
 
 app.listen(6969,()=>{
