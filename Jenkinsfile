@@ -9,7 +9,7 @@ pipeline{
         }
         stage("Deepak"){
             steps{
-                echo "Deepak"
+                echo "Deepak second"
             }
         }
     }
